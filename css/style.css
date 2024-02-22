@@ -2,7 +2,7 @@
     font-family: "FiracodeRegular"; 
     src: url("../font/FiraCode-Regular.ttf") format("truetype"); 
     font-style: normal; 
-    font-weight: normal; 
+    font-weight: normal;
 } 
 
 * {
@@ -10,35 +10,40 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "FiracodeRegular";
+    font-weight: 100;
 }
 
 :root {
     --primary: #607B96;
     --secondary: #1E2D3D;
     --background: #011627;
-    --headerHeight: 60px;
+    --headerFooterHeight: 60px;
+    --mainHeight: calc(100vh - var(--headerFooterHeight) * 2);
+    --contentMargin: calc( (var(--mainHeight) - var(--contentHeight)) / 2 );
+    --contentHeight: 600px;
+    --gameHeight:500px;
 }
 
-header {
+header,footer {
     width: 100vw;
     justify-content: space-between;
-    height: var(--headerHeight);
-    line-height: 50px;
+    height: var(--headerFooterHeight);
+    line-height: 47px;
     border: var(--secondary) 2px solid;
     color: var(--primary);
     background-color: var(--background);
 }
 
-header,.upper-menu {
+header,footer,.upper-menu {
     display: flex;
     flex-direction: row;
 }
 
-.button,.name {
-    border-right: var(--secondary) 1px solid;
+.button,.name,.social div {
+    border-right: var(--secondary) 2px solid;
 }
 
-.button,.button-contact {
+.button,.button-contact,.github {
     width: 150px;
     text-align: center;
 }
@@ -64,11 +69,137 @@ header,.upper-menu {
     padding:0 10px;
 }
 
-.button-contact {
-    border-left: var(--secondary) 1px solid;
+.button-contact,.github {
+    border-left: var(--secondary) 2px solid;
 }
 
 main {
+    position: relative;
     background-color: var(--background);
-    height: calc(100vh - var(--headerHeight));
+    height: var(--mainHeight);
+    padding-top: var(--contentMargin);
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-bottom: var(--contentMargin);
+    width: 1200px;
+    height: var(--contentHeight);
+}
+
+.left-template {
+    padding: 75px 0;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.personal-info,.github-info,.left-template {
+    display: flex;
+    flex-direction: column;
+}
+
+.github-info {
+    line-height: 35px;
+}
+
+.body-text {
+    font-size: 18px;
+    color: white;
+    font-weight: 100;
+}
+
+.headline-text {
+    font-size: 62px;
+    color: white;
+    font-weight: 100;
+}
+
+.subheadline-text {
+    font-size: 32px;
+    color: #4D5BCE;
+    font-weight: 100;
+}
+
+.label {
+    font-size: 16px;
+    color: white;
+}
+
+.comment {
+    color: #607B96;
+}
+
+.type-of-var {
+    color: #4D5BCE;
+}
+
+.name-of-var {
+    color: #43D9AD;
+}
+
+.string {
+    color: #E99287;
+}
+
+.game {
+    margin-top: calc((var(--contentHeight) - 500px) / 2 );
+    background: linear-gradient(140deg, rgba(23, 85, 83, 100%), rgba(67, 217, 173, 13%));
+    width: 500px;
+    height: var(--gameHeight);
+    border: #0C1616 2px solid;
+    border-radius: 8px;
+}
+
+.github,.social {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.icon {
+    width: 60px;
+    padding: 10px 15px;
+}
+
+.icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.social .label,.username {
+    line-height: 55px;
+}
+
+.green-light {
+    transform: rotate(45deg);
+    top: 270px;
+    right: 500px;
+    width: 400px;
+    height: 0px;
+    position: absolute;
+    box-shadow: 0 0 200px 40px #43D9AD;
+}
+
+.blue-light {
+    position: absolute;
+    box-shadow: 0 0 180px 60px #4D5BCE;
+}
+
+.first {
+    transform: rotate(150deg);
+    top: 600px;
+    right: 600px;
+    width: 200px;
+    height: 0px;
+}
+
+.second {
+    transform: rotate(200deg);
+    top: 600px;
+    right: 300px;
+    width: 200px;
+    height: 0px;
 }
