@@ -22,6 +22,8 @@
     --contentMargin: calc( (var(--mainHeight) - var(--contentHeight)) / 2 );
     --contentHeight: 600px;
     --gameHeight:500px;
+    --gameElementHeight:450px;
+    --gamePadding:calc((var(--gameHeight) - var(--gameElementHeight)) / 2 );
 }
 
 header,footer {
@@ -86,7 +88,7 @@ main {
     justify-content: space-around;
     margin: 0 auto;
     margin-bottom: var(--contentMargin);
-    width: 1200px;
+    width: 1300px;
     height: var(--contentHeight);
 }
 
@@ -145,15 +147,18 @@ main {
 }
 
 .game {
+    position: relative;
     margin-top: calc((var(--contentHeight) - 500px) / 2 );
     background: linear-gradient(140deg, rgba(23, 85, 83, 100%), rgba(67, 217, 173, 13%));
-    width: 500px;
+    width: 600px;
     height: var(--gameHeight);
     border: #0C1616 2px solid;
     border-radius: 8px;
+    padding: var(--gamePadding);
+    gap: 25px;
 }
 
-.github,.social {
+.github,.social,.game {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -171,12 +176,13 @@ main {
 
 .social .label,.username {
     line-height: 55px;
+    padding: 0 10px;
 }
 
 .green-light {
     transform: rotate(45deg);
-    top: 270px;
-    right: 500px;
+    top: 70px;
+    right: 100px;
     width: 400px;
     height: 0px;
     position: absolute;
@@ -190,16 +196,150 @@ main {
 
 .first {
     transform: rotate(150deg);
-    top: 600px;
-    right: 600px;
+    top: 450px;
+    right: 250px;
     width: 200px;
     height: 0px;
 }
 
 .second {
     transform: rotate(200deg);
-    top: 600px;
-    right: 300px;
+    top: 300px;
+    right: 0px;
     width: 200px;
     height: 0px;
+}
+
+canvas {
+    width: 240px;
+    height: var(--gameElementHeight);
+    background-color: #011627;
+    border-radius: 8px;
+}
+
+.game-info {
+    width: 240px;
+    height: var(--gameElementHeight);
+}
+
+.bolt {
+    position: absolute;
+}
+
+.right-template {
+    position: relative;
+}
+
+.top-left {
+    top:60px;
+    left: 10px;
+}
+
+.top-right {
+    top:60px;
+    right: 10px;
+}
+
+.bottom-left {
+    bottom:60px;
+    left: 10px;
+}
+
+.bottom-right {
+    bottom:60px;
+    right: 10px;
+}
+
+.controls-info {
+    background-color: #011423;
+    height: 150px;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.controls-info p {
+    color: white;
+}
+
+.controls-buttons {
+    margin: 10px auto;
+    justify-content: center;
+    display: grid;
+    grid-template-areas: 
+    ". up ."
+    "left-arrow down right-arrow";
+    gap: 10px;
+}
+
+.control-button {
+    width: 50px;
+    height: 30px;
+    background-color: black;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    padding: 2px;
+}
+
+.control-button img {
+    width: 9px;
+    height: 6.5px;
+}
+
+.up {
+    grid-area: up;
+}
+
+.down {
+    grid-area: down;
+}
+
+.right {
+    grid-area: right-arrow;
+}
+
+.left {
+    grid-area: left-arrow;
+}
+
+.food-left {
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.food-left p {
+    color: white;
+}
+
+.food-counter {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 20px 20px 20px 20px 20px;
+    gap: 20px;
+}
+
+.count {
+    width: 20px;
+    height: 20px;
+    background-color: #43D9AD;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #35816b;
+}
+
+.eaten {
+    background-color: #24745c;
+    box-shadow: 0 0 0 4px #33695c;
+}
+
+button {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    border-radius: 8px;
+    width: 60px;
+    height: 40px;
+    font-size: 14px;
+    background: rgba( 255, 255, 255, 0);
+    color: white;
+    border: white 2px solid;
 }
