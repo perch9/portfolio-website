@@ -1,6 +1,74 @@
+@font-face {
+    font-family: "FiracodeRegular"; 
+    src: url("../font/FiraCode-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    font-family: "FiracodeRegular";
+}
+
+:root {
+    --primary: #607B96;
+    --secondary: #1E2D3D;
+    --background: #011627;
+    --headerHeight: 60px;
+}
+
+header {
+    width: 100vw;
+    justify-content: space-between;
+    height: var(--headerHeight);
+    line-height: 50px;
+    border: var(--secondary) 2px solid;
+    color: var(--primary);
+    background-color: var(--background);
+}
+
+header,.upper-menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.button,.name {
+    border-right: var(--secondary) 1px solid;
+}
+
+.button,.button-contact {
+    width: 150px;
+    text-align: center;
+}
+
+.button {
+    transition: border-color 0.5s, color 0.5s;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.active {
+    border-bottom: #FEA55F 2px solid;
+    color: white;
+}
+
+.button:hover {
+    border-bottom: #FEA55F 2px solid;
+    color: white;
+}
+
+.name {
+    width: 240px;
+    padding:0 10px;
+}
+
+.button-contact {
+    border-left: var(--secondary) 1px solid;
+}
+
+main {
+    background-color: var(--background);
+    height: calc(100vh - var(--headerHeight));
 }
