@@ -22,7 +22,7 @@
     --contentMargin: calc( (var(--mainHeight) - var(--contentHeight)) / 2 );
     --contentHeight: 600px;
     --gameHeight:500px;
-    --gameElementHeight:450px;
+    --gameElementHeight:440px;
     --gamePadding:calc((var(--gameHeight) - var(--gameElementHeight)) / 2 );
 }
 
@@ -343,3 +343,4 @@ button {
     color: white;
     border: white 2px solid;
 }
+
